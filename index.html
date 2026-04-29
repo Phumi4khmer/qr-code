@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Studio</title>
+    <script>
+      // Prevent errors when libraries try to overwrite window.fetch
+      (function() {
+        try {
+          const originalFetch = window.fetch;
+          Object.defineProperty(window, 'fetch', {
+            get: function() { return originalFetch; },
+            set: function(v) { console.warn('Something tried to overwrite window.fetch. Blocked to prevent crash.'); },
+            configurable: true,
+            enumerable: true
+          });
+        } catch (e) {
+          // If we can't redefine it, we hope nothing tries to set it
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="./assets/index-l7tdo0ol.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CQ_wrf01.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+
